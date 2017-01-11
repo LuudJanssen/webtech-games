@@ -1,0 +1,61 @@
+main .banner {
+    height: 600px;
+    background-image: url("../img/landing-background.jpg");
+    background-size: cover;
+    filter: blur(100px);
+    overflow: hidden;
+}
+
+main .games {
+    width: 100%;
+}
+
+main .games .game {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    justify-content: center;
+}
+
+main .games .game .cover-photo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(50px);
+    z-index: -1;
+    background-image: url("../img/snake.png");
+    background-size: cover;
+}
+
+main .games .game .info {
+    flex: 0 0 800px;
+    color: white;
+}
+
+main .games .game .info h2 {
+    font-size: 3em;
+    font-family: "Roboto Slab", serif;
+}
+
+main .games .game .info .description {
+    font-size: 1em;
+}
+
+main .games .game .info .highscore {
+    font-size: 2em;
+    font-family: "Roboto Slab", serif;
+    font-weight: 100;
+}
+
+main .games .game .info .highscore span {
+    font-weight: bold
+}
+
+main .games .game .play .photo {
+    display: block;
+    width: 400px;
+}

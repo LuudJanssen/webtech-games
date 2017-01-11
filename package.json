@@ -1,0 +1,22 @@
+{
+  "name": "webtech-games",
+  "version": "1.0.0",
+  "description": "Selection of games",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuudJanssen/webtech-games.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuudJanssen/webtech-games/issues"
+  },
+  "homepage": "https://github.com/LuudJanssen/webtech-games#readme",
+  "dependencies": {
+    "less": "^2.7.2"
+  }
+}

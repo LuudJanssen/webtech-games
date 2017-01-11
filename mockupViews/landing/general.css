@@ -1,0 +1,36 @@
+html, body {
+    font-family: "Roboto", sans-serif;
+}
+
+.button {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-bottom: solid 4px rgba(0,0,0,0.2);
+    color: white;
+    margin: 2px 8px;
+    border-radius: 2px;
+}
+
+.button:active {
+    top: 4px;
+    border-bottom-width: 0;
+}
+
+.button.green {
+    background-color: #4CAF50;
+}
+
+.button.blue {
+    background-color: #2196F3;
+}
+
+.button.full-width {
+    width: 100%;
+}
+
+a.button {
+    text-decoration: none;
+}

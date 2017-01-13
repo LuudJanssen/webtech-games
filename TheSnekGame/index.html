@@ -1,0 +1,57 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8">
+	<title>The Snek Game</title>
+</head>
+
+<body>
+	<div id="documenter_sidebar">
+		<ul>
+			<img src="http://2static4.fjcdn.com/comments/Original+_e2f6d303b1b4571abfaf3d1278c066d4.jpg" width="200px" height="200px">
+			<li><a href="#Home">Home</a></li>
+			<li><a href="#Explaination" title="Explaination">Explanation</a></li>
+			<li><a href="#Game" title="Game">Game</a></li>
+		</ul>
+	</div>
+	<div id="documenter_content">
+		<section id="Home">
+			<div class="ex">
+				<h1>The Snek Game</h1>
+				<h2>Play like a snek, become the snek</h2>
+				  <p>This small interactive website blesses you with this awesome game!</p>
+					<p>Isn't that nice?</p>
+			</div>
+		</section>
+		<section id="Explaination">
+			<div class="ex">
+				<h1>Explanation</h1>
+				<h2>Because...you know...you might need it</h2>
+				<p>This website is a bit different from other websites. What this means for you
+					is that you're not able to scroll up and down like you're used to, but you will
+					have to use the navigation bar on the left side of the screen instead.</p>
+				<p>The control are simple: just use the arrow keys to move the snek in four directions.
+					However, take caution not to hit the walls or accidentally eat yourself, otherwise
+					it's game over for you!</p>
+				<p>Make sure to click the "Game" button first!</p>
+			</div>
+		</section>
+		<section id="Game">
+			<div class="play">
+				<h2>The Game</h2>
+				<p>Press the start button to become the snek!</p>
+				<button id='btn'>Start</button>
+				<canvas id="canvas" width="500" height="500"></canvas>
+			</div>
+		</section>
+	</div>
+	<!--link css file -->
+	<link rel="stylesheet" href="style.css" media="all">
+	<!--for smooth scolling -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<!--the snek game files-->
+	<script src="snekGame.js"></script>
+	<script src="snekApp.js"></script>
+	<script src="snekSettings.js"></script>
+</body>
+</html>

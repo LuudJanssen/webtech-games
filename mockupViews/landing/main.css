@@ -59,3 +59,10 @@ main .games .game .play .photo {
     display: block;
     width: 400px;
 }
+
+main .gamebox {
+    background: blue;
+    width: 500vw;
+    height: 500vw;
+
+}

@@ -2,6 +2,7 @@ body {
     background: orange;
     font-family: "Roboto", sans-serif;
     padding-top: 100px;
+
 }
 
 .navbar {
@@ -84,4 +85,8 @@ body {
 
 li {
     margin: 10px 0;
+}
+
+a {
+    color: rgba(0,0,0,5)
 }

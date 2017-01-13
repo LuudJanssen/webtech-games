@@ -1,4 +1,4 @@
-"""webtechgames URL Configuration
+""""webtechgames URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -13,10 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.conf.urls import url, include
+from django.contrib import admin
 from rest_framework import routers
-from webtechgames import views
+
+from webtechgames.webtechsite import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewset)

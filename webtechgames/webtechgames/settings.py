@@ -63,13 +63,13 @@ WSGI_APPLICATION = 'webtechgames.wsgi.application'
 DATABASES = {
     'default': {
             
-            #'ENGINE': 'django.db.backends.mysql',
-            #'NAME': 'luudjanssen$webtechgames',
-            #'USER': 'luudjanssen',
-            #'PASSWORD': 'XxvuNuRkeSKYRKG2rKxCgc6r',
-            #'HOST': 'luudjanssen.mysql.pythonanywhere-services.com',
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'luudjanssen$webtechgames',
+            'USER': 'luudjanssen',
+            'PASSWORD': 'XxvuNuRkeSKYRKG2rKxCgc6r',
+            'HOST': 'luudjanssen.mysql.pythonanywhere-services.com',
+            #'ENGINE': 'django.db.backends.sqlite3',
+            #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
 

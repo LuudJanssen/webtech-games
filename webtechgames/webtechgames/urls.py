@@ -14,41 +14,44 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from django.contrib.auth.models import User, Group
+from webtechgames.webtechsite.models import Game, Highscore
 from rest_framework import routers, serializers, viewsets
 
-# Serializers define the API representation.
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ('url', 'username', 'email', 'is_staff')
 
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
+# Serializers define the API representation.
+class GameSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Group
-        fields = ('url', 'name')
+        model = Game
+        fields = '__all__'
+
+
+class HighscoreSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Highscore
+        fields = '__all__'
+
 
 # ViewSets define the view behavior.
-class UserViewSet(viewsets.ModelViewSet):
+class GameViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows game data to be viewed or edited.
     """
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
+    queryset = Game.objects.all().order_by('-date_joined')
+    serializer_class = GameSerializer
 
 
-class GroupViewSet(viewsets.ModelViewSet):
+class HighscoreViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows highscore data to be viewed or edited.
     """
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
+    queryset = Highscore.objects.all()
+    serializer_class = HighscoreSerializer
 
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
-router.register(r'games', UserViewSet)
-router.register(r'highscore', GroupViewSet)
+router.register(r'games', GameViewSet)
+router.register(r'highscore', GameViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

@@ -36,7 +36,7 @@ class GameViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows game data to be viewed or edited.
     """
-    queryset = Game.objects.all().order_by('-date_joined')
+    queryset = Game.objects.all().order_by('-dateAdded')
     serializer_class = GameSerializer
 
 

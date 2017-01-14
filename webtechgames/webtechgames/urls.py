@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from webtechgames.webtechsite.models import Game, Highscore
+from webtechsite.models import Game, Highscore
 from rest_framework import routers, serializers, viewsets
 
 
@@ -51,7 +51,7 @@ class HighscoreViewSet(viewsets.ModelViewSet):
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'games', GameViewSet)
-router.register(r'highscore', GameViewSet)
+router.register(r'highscore', HighscoreViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

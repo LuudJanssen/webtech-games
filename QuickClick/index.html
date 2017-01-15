@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>Reaction Game</title>
+</head>
+<body>
+  
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <p id="start">Select a difficulty to begin</p>
+  <button id="hard">Hard difficulty</button>
+  <button id="medium">Medium difficulty</button>
+  <button id="easy">Easy difficulty</button>
+
+  <div id="rectangle"></div>
+  <div id="instructions">
+		<h1>Test your reflexes</h1>
+		<p>Try to click on the shape as fast as possible. Get below 0.45 seconds and get a suprise!</p>
+	</div>
+	<div id="scoreBoard">
+		<p>Your High Score: <span id="highScore">0</span>s</p>
+		<p>Your time: <span id="time">0</span>s</p>
+        <p>Current play-time: <span id="counter">0</span>s</p>
+        <p>Your points: <span id="score">0</span></p>
+	</div>
+
+  <div id="nameIntro">
+    <p>Currently playing:<span id="name"></span></p>
+  </div>
+
+	<div id="boxE"></div>
+  <div id="boxM"></div>
+  <div id="boxH"></div>
+  <script type='text/javascript' src='index.js'></script>
+
+
+</body>
+
+
+</html>

@@ -14,6 +14,7 @@ class Game(models.Model):
 
 class Highscore(models.Model):
     username = models.TextField()
+    gameId = models.TextField()
     userId = models.TextField()
     highscore = models.IntegerField(blank=True, null=True)
     date = models.DateTimeField(default=timezone.now)

@@ -4,7 +4,6 @@ var reactionTime;
 var highScore = [];
 var score = [];
 var sec = 0;
-var level = 1;
 
  var name = window.prompt("Hello and welcome to this small yet fun reaction game!\nPlease input your name below to begin", "Enter name here");
  if (name.length != 0) {

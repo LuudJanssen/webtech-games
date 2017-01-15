@@ -1,9 +1,96 @@
 main .banner {
-    height: 600px;
-    background-image: url("../img/landing-background.jpg");
+    height: 690px;
     background-size: cover;
     filter: blur(100px);
     overflow: hidden;
+}
+
+main .banner-container {
+    padding-bottom: 90px;
+}
+
+main .banner-content {
+    position: relative;
+    height: 600px;
+    margin-top: -690px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .banner-content .splash {
+    color: white;
+    flex: 0 0 700px;
+    text-align: center;
+}
+
+main .banner-content .splash h1 {
+    font-family: "Roboto Slab", serif;
+    font-size: 2.5em;
+    font-weight: 100;
+}
+
+main .banner-content .splash p {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 36px;
+}
+
+main .sorting-controls {
+    position: relative;
+    margin-top: -90px;
+    height: 90px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    padding: 0 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .sorting-controls h3 {
+    font-family: "Roboto Slab", serif;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: white;
+}
+
+main .sorting-controls .cs-skin-elastic {
+    font-size: 1em;
+    font-weight: 400;
+    color: rgba(0,0,0,0.87);
+    width: 250px;
+    filter: drop-shadow(0 0px 0px rgba(0,0,0,0));
+    transition: filter 0.3s;
+}
+
+main .sorting-controls .cs-active {
+    filter: drop-shadow(0 0px 9px rgba(0,0,0,0.6));
+}
+
+.cs-skin-elastic.cs-active .cs-options ul li {
+    animation: none;
+    transition: opacity 0.15s 0.15s, transform 0.15s 0.15s;
+}
+
+.cs-skin-elastic.cs-active .cs-options > ul::before {
+    animation: none;
+    transition: transform 0.3s;
+}
+
+.cs-skin-elastic .cs-options span {
+    transition: color 0.1s;
+    padding-left: 1.5em;
+}
+
+.cs-skin-elastic .cs-options span:hover,
+.cs-skin-elastic .cs-options li.cs-focus span {
+	color: #2196F3;
+}
+
+.cs-skin-elastic .cs-options .cs-selected span {
+    color: inherit;
+    font-weight: 700;
 }
 
 main .games {
@@ -17,6 +104,8 @@ main .games .game {
     height: 400px;
     overflow: hidden;
     justify-content: center;
+    z-index: 0;
+    padding: 0 15%;
 }
 
 main .games .game .cover-photo {
@@ -32,17 +121,19 @@ main .games .game .cover-photo {
 }
 
 main .games .game .info {
-    flex: 0 0 800px;
+    flex: 0 0 60%;
     color: white;
 }
 
 main .games .game .info h2 {
     font-size: 3em;
     font-family: "Roboto Slab", serif;
+    font-weight: 100;
 }
 
 main .games .game .info .description {
-    font-size: 1em;
+    font-size: 1.2em;
+    font-weight: 300;
 }
 
 main .games .game .info .highscore {
@@ -52,17 +143,26 @@ main .games .game .info .highscore {
 }
 
 main .games .game .info .highscore span {
-    font-weight: bold
+    font-weight: bold;
+}
+
+main .games .game .info .highscore span:after {
+    content: ' ';
+}
+
+main .games .game .play {
+    padding-left: 40px;
+    align-self: center;
+    flex: 1 0 40%;
 }
 
 main .games .game .play .photo {
     display: block;
-    width: 400px;
+    width: 100%;
+    margin-bottom: 8px;
 }
 
-main .gamebox {
-    background: blue;
-    width: 500vw;
-    height: 500vw;
-
+main .games .game .play .button:active {
+    margin-top: 8px;
+    margin-bottom: 4px;
 }

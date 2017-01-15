@@ -2,6 +2,10 @@ html, body {
     font-family: "Roboto", sans-serif;
 }
 
+div {
+    box-sizing: border-box;
+}
+
 .button {
     position: relative;
     text-transform: uppercase;
@@ -28,7 +32,11 @@ html, body {
 }
 
 .button.full-width {
+    display: block;
+    box-sizing: border-box;
     width: 100%;
+    margin: 0;
+    text-align: center;
 }
 
 a.button {

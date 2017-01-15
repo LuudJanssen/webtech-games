@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 13 jan 2017 om 09:29
+-- Gegenereerd op: 15 jan 2017 om 14:15
 -- Serverversie: 5.7.14
 -- PHP-versie: 5.6.25
 
@@ -27,14 +27,22 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `games` (
-  `id` varchar(24) NOT NULL,
+  `gameId` varchar(24) NOT NULL,
   `name` text NOT NULL,
   `description` text NOT NULL,
   `location` text NOT NULL,
   `genre` text NOT NULL,
-  `date` timestamp NOT NULL,
-  `timesplayed` int(24) NOT NULL
+  `dateAdded` timestamp NOT NULL,
+  `timesPlayed` int(24) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `games`
+--
+
+INSERT INTO `games` (`gameId`, `name`, `description`, `location`, `genre`, `dateAdded`, `timesPlayed`) VALUES
+('snakegame', 'Snake Game', 'A snake needs food', 'snakegame', 'highscore', '2017-01-15 14:11:47', 5),
+('battleship', 'Battleship', 'Sink all enemy ships', 'battleship', 'highscore', '2017-01-15 14:14:05', 7);
 
 -- --------------------------------------------------------
 
@@ -44,8 +52,9 @@ CREATE TABLE `games` (
 
 CREATE TABLE `highscore` (
   `id` int(16) NOT NULL,
-  `gameid` int(24) NOT NULL,
-  `userid` varchar(24) NOT NULL,
+  `username` text NOT NULL,
+  `gameId` text NOT NULL,
+  `userId` text NOT NULL,
   `highscore` int(24) NOT NULL,
   `date` timestamp NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -58,7 +67,7 @@ CREATE TABLE `highscore` (
 -- Indexen voor tabel `games`
 --
 ALTER TABLE `games`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`gameId`);
 
 --
 -- Indexen voor tabel `highscore`

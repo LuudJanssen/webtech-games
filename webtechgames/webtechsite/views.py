@@ -9,6 +9,7 @@ from rest_framework import viewsets
 from .serializers import GameSerializer, HighscoreSerializer
 
 
+
 class UserFormView(View):
     form_class = UserForm
     template_name = 'webtechsite/registration_form.html'
@@ -31,22 +32,22 @@ class UserFormView(View):
 
             user = authenticate(username=username, password=password)
 
-            if user is not None:
-
-                if user.is_active:
-                    login(request, user)
-                    return redirect('webtechsite:index')
+            # if user is not None:
+            #
+            #     if user.is_active:
+            #         login(request, user)
+            #         return redirect('http://127.0.0.1:8000/register/')
 
         return render(request, self.template_name, {'form':form})
 
 
-def logout_user(request):
-    logout(request)
-    form = UserForm(request.POST or None)
-    context = {
-        "form": form,
-    }
-    return render(request, '/../mockupViews/landing/index.html', context)
+# def logout_user(request):
+#     logout(request)
+#     form = UserForm(request.POST or None)
+#     context = {
+#         "form": form,
+#     }
+#     return render(request, '/../mockupViews/landing/index.html', context)
 
 # ViewSets define the view behavior.
 class GameViewSet(viewsets.ModelViewSet):
@@ -66,7 +67,4 @@ class HighscoreViewSet(viewsets.ModelViewSet):
 
 
 def index(request):
-    if not request.user.is_authenticated():
-        return render(request, 'webtechsite/index.html')
-    else:
         return render(request, 'webtechsite/index.html')

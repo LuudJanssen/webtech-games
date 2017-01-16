@@ -30,3 +30,6 @@ Including another URLconf
 #     url(r'^register/$', views.UserForm.as_view(), name='register'),
 #     url(r'^', include('webtechsite.urls')),
 # ]
+urlpatterns = [
+    url(r'^$', views.index, name='home'),
+]

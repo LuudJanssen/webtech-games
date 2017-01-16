@@ -48,8 +48,7 @@ def logout_user(request):
     context = {
         "form": form,
     }
-    return render(request, 'webtechsite:index.html', context)
-
+    return render(request, '/../mockupViews/landing/index.html', context)
 
 # ViewSets define the view behavior.
 class GameViewSet(viewsets.ModelViewSet):

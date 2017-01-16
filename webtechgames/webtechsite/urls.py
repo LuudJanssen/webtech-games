@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
-from webtechsite import views
+from . import views
 
 router = DefaultRouter()
 router.register(r'users', views.UserViewset)
@@ -27,5 +27,6 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^login_user/$', views.login_user, name='login_user'),
     url(r'^logout_user/$', views.logout_user, name='logout_user'),
+    url(r'^register/$', views.UserForm.as_view(), name='register'),
     url(r'^', include('webtechsite.urls')),
 ]

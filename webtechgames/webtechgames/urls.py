@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from webtechsite.models import Game, Highscore
 from rest_framework import routers, serializers, viewsets
+from django.contrib import admin
 
 
 # Serializers define the API representation.
@@ -56,6 +57,7 @@ router.register(r'highscore', HighscoreViewSet)
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
+    url(r'^admin/', admin.site.urls),
     url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]

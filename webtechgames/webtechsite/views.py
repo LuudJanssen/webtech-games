@@ -66,3 +66,10 @@ class HighscoreViewSet(viewsets.ModelViewSet):
     """
     queryset = Highscore.objects.all()
     serializer_class = HighscoreSerializer
+
+
+def index(request):
+    if not request.user.is_authenticated():
+        return render(request, 'webtechsite/index.html')
+    else:
+        return render(request, 'webtechsite/index.html')

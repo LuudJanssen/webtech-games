@@ -100,12 +100,13 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="../js/vendor/color-thief.js"></script>
 <script src="../js/vendor/classie.js"></script>
 <script src="../js/vendor/selectFx.js"></script>
 <script src="../js/general-functions.js"></script>
 <script src="../js/popups.js"></script>
+<script src="../js/api.js"></script>
 <script>
     $(document).ready(function () {
         // Get banner element and background-url and correct background blur
@@ -124,6 +125,15 @@
                 new SelectFx(el);
             });
         })();
+
+        /* API examples
+        var api = new Api('http://localhost');
+
+        api.getGames();
+        api.getGame('snakegame');
+        api.getHighscore('snakegame');
+        api.getHighscore('snakegame', 'luudjanssen');
+        api.setHighscore('snakegame', 'luudjanssen', 538);*/
     });
 </script>
 </body>

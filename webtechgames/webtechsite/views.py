@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.shortcuts import render, redirect
 from django.views import generic
-from django views.generic import View
+from django.views.generic import View
 from .forms import UserForm
 from .models import Game, Highscore
 from rest_framework import viewsets, status

@@ -13,46 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+
 from django.conf.urls import url, include
-from webtechsite.models import Game, Highscore
-from rest_framework import routers, serializers, viewsets
+from webtechsite import views
+from rest_framework import routers
 from django.contrib import admin
-
-
-# Serializers define the API representation.
-class GameSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Game
-        fields = '__all__'
-
-
-class HighscoreSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Highscore
-        fields = '__all__'
-
-
-# ViewSets define the view behavior.
-class GameViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows game data to be viewed or edited.
-    """
-    queryset = Game.objects.all().order_by('-dateAdded')
-    serializer_class = GameSerializer
-
-
-class HighscoreViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows highscore data to be viewed or edited.
-    """
-    queryset = Highscore.objects.all()
-    serializer_class = HighscoreSerializer
 
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
-router.register(r'games', GameViewSet)
-router.register(r'highscore', HighscoreViewSet)
+router.register(r'games', views.GameViewSet)
+router.register(r'highscore', views.HighscoreViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

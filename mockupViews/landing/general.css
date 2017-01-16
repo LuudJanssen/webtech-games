@@ -63,4 +63,16 @@ footer {
     padding-right: 20px;
 }
 
+.footer-link {
+    color: rgba(0,0,0,1)
+}
+
+.footer-link:hover {
+    color: #2196F3;
+    text-decoration: none;
+}
+
+.no-link {
+    text-decoration: none;
+}
 

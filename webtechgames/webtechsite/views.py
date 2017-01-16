@@ -32,11 +32,11 @@ class UserFormView(View):
 
             user = authenticate(username=username, password=password)
 
-            # if user is not None:
-            #
-            #     if user.is_active:
-            #         login(request, user)
-            #         return redirect('http://127.0.0.1:8000/register/')
+            if user is not None:
+
+                if user.is_active:
+                    login(request, user)
+                    return render(request, 'webtechsite/index.html')
 
         return render(request, self.template_name, {'form':form})
 

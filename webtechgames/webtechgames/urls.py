@@ -3,7 +3,6 @@ from webtechsite import views
 from rest_framework import routers
 from django.contrib import admin
 
-
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'games', views.GameViewSet)
@@ -16,5 +15,8 @@ urlpatterns = [
     url(r'^api', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^$', views.index, name='index'),
-    url(r'^register/$', views.UserFormView.as_view(), name='register'),
+    # url(r'^register/$', views.UserFormView.as_view(), name='register'),
+    url(r'^register/$', views.register, name='register'),
+
+    url(r'^login_user/$', views.login_user, name='login_user'),
 ]

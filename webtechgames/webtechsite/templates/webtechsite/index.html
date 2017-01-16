@@ -92,23 +92,25 @@
     <div class="popup popup-sign-in">
         <h2>Sign in</h2>
         <form class="login-form" role="form" action="{% url 'webtechsite:login_user'%}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
             <label for="sign_in_email">E-mail</label>
-            <input id="sign_in_email" placeholder="example@example.com">
+            <input id="sign_in_email" name="password" placeholder="example@example.com">
             <label for="sign_in_password">Password</label>
-            <input id="sign_in_password" type="password" placeholder="example">
+            <input id="sign_in_password" type="password" name="password" placeholder="example">
             <buton type="submit" class="button green full-width">Sign In!</buton>
         </form>
     </div>
     <div class="popup popup-sign-up">
         <h2>Sign up</h2>
-        <form class="login-form">
+        <form class="login-form" role="form" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
             <label for="sign_up_email">E-mail</label>
-            <input id="sign_up_email" placeholder="example@example.com">
+            <input id="sign_up_email" name="username" placeholder="username">
             <label for="sign_up_password">Password</label>
-            <input id="sign_up_password" type="password" placeholder="example">
+            <input id="sign_up_password" type="password" name="password" placeholder="example">
             <label for="sign_up_password_repeat">Repeat Password</label>
-            <input id="sign_up_password_repeat" type="password" placeholder="example">
-            <a class="button blue full-width">Register</a>
+            <input id="sign_up_password_repeat" type="password" name="password" placeholder="example">
+            <button type="submit" class="button blue full-width">Register</button>
         </form>
     </div>
 </div>

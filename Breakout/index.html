@@ -122,6 +122,7 @@ function collisionDetection() {
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
                         alert("You won! Congratulations!\nYour total score is calculated through multiplying the amount of bricks broken with the amount of lives left. Your score is " +totalScore*lives);
+                        giveScore();
                         document.location.reload();
                     }
                 }
@@ -198,6 +199,9 @@ function mouseMoveHandler(e) {
     if(relativeX > 0 && relativeX < canvas.width) {
         paddleX = relativeX - paddleWidth/2;
     }
+}
+function giveScore() {
+//    Put function to push highscore here
 }
 draw();
 </script>

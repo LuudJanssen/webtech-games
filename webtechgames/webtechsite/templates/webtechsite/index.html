@@ -36,20 +36,33 @@
             <div class="logo"><span>WebTech</span> Games</div>
         </div>
         <div class="right-container">
-            <div class="signup"><a class="button green" onclick="showPopup('sign-in')">Sign In</a><a class="button blue"
-                                                                                                     onclick="showPopup('sign-up')">Sign
-                Up</a></div>
-        </div>
+            {% if user.is_authenticated %}
+            <div class="signup"><a href="../logout_user" class="button red">Logout</a>
+                {% else %}
+                <div class="signup"><a class="button green" onclick="showPopup('sign-in')">Sign In</a>
+                    <a class="button blue" onclick="showPopup('sign-up')">Sign Up</a></div>
+                {% endif %}
+            </div>
     </header>
     <main>
         <div class="banner-container" id="banner_container">
             <div class="banner" id="banner" style="background-image: url('../img/landing-background.jpg');"></div>
             <div class="banner-content">
                 <div class="splash">
-                    <h1>{{ user.username }}, Want To Track Your Gaming Skills?</h1>
-                    <p>Signing up allows you to record your game activity and highscores. Save your highscores and
-                        compete with others!</p>
-                    <a class="button blue" onclick="showPopup('sign-up')">Sign Up Now</a>
+                    {% if user.is_authenticated %}
+                    <h1>
+                        {{ user.username }}, Welcome Back! <br> Let's Play!
+                    </h1>
+                    {% endif %}
+
+                    {% if not user.is_authenticated %}
+                    <h1>
+                        Want To Track Your Gaming Skills?
+                        </h1>
+                        <p>Signing up allows you to record your game activity and highscores. Save your highscores and
+                            compete with others!</p>
+                        <a class="button blue" onclick="showPopup('sign-up')">Sign Up Now</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -97,7 +110,7 @@
             <input id="sign_in_email" name="password" placeholder="example@example.com">
             <label for="sign_in_password">Password</label>
             <input id="sign_in_password" type="password" name="password" placeholder="example">
-            <buton type="submit" class="button green full-width">Sign In!</buton>
+            <a type="submit" href="../login_user" class="button green full-width">Sign In!</a>
         </form>
     </div>
     <div class="popup popup-sign-up">
@@ -110,12 +123,10 @@
             <input id="sign_up_password" type="password" name="password" placeholder="example">
             <label for="sign_up_password_repeat">Repeat Password</label>
             <input id="sign_up_password_repeat" type="password" name="password" placeholder="example">
-            <button type="submit" class="button blue full-width">Register</button>
+            <a type="submit" href="../register" class="button blue full-width">Register</a>
         </form>
     </div>
 </div>
-
-<div class="signup"><a href="../logout_user" class="button green">Logout</a>
 
 
 <script>

@@ -5,12 +5,6 @@ var highScore = [];
 var score = [];
 var sec = 0;
 
- var name = window.prompt("Hello and welcome to this small yet fun reaction game!\nPlease input your name below to begin", "Enter name here");
- if (name.length != 0) {
-   alert( "Hello " + name +"! I hope you are ready!\nChange the difficulty level using the buttons at the top.\nPress the 'ok' button to begin");
- }
- document.getElementById("name").innerHTML=name;
-
 
 
 
@@ -25,7 +19,7 @@ var sec = 0;
 function makeBoxE() {
 
 
-  //Set the properties for the box whithin the game will be played and the properties for the shape
+  //Set the properties for the box within the game will be played and the properties for the shape
 
   var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
   var time = Math.random() * 5000;
@@ -54,7 +48,7 @@ function makeBoxE() {
   }
   //Some easter eggs.. Heheh
   if (reactionTime<0.45) {
-    confirm("Congratulations! You have beaten the game!\nAs for the suprise..")
+    confirm("Congratulations! You have beaten the game!\nAs for the suprise..");
     alert("There is no suprise, neither is there an end!\nYou just keep on playing..and playing.. and playing");
   }
   if (reactionTime==0.666) {
@@ -93,7 +87,7 @@ function makeBoxM() {
 
 
 
-  //Set the properties for the box whithin the game will be played and the properties for the shape
+  //Set the properties for the box within the game will be played and the properties for the shape
 
   var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
   var time = Math.random() * 5000;
@@ -122,7 +116,7 @@ function makeBoxM() {
   }
   //Some easter eggs.. Heheh
   if (reactionTime<0.35) {
-    confirm("Congratulations! You have beaten the game!\nAs for the suprise..")
+    confirm("Congratulations! You have beaten the game!\nAs for the suprise..");
     alert("There is no suprise, neither is there an end!\nYou just keep on playing..and playing.. and playing");
   }
   if (reactionTime==0.666) {
@@ -157,7 +151,7 @@ document.getElementById("boxM").onclick = function(){
 
 function makeBoxH() {
 
-  //Set the properties for the box whithin the game will be played and the properties for the shape
+  //Set the properties for the box within the game will be played and the properties for the shape
 
   var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
   var time = Math.random() * 5000;
@@ -186,7 +180,7 @@ function makeBoxH() {
   }
   //Some easter eggs.. Heheh
   if (reactionTime<0.35) {
-    confirm("Congratulations! You have beaten the game!\nAs for the suprise..")
+    confirm("Congratulations! You have beaten the game!\nAs for the suprise..");
     alert("There is no suprise, neither is there an end!\nYou just keep on playing..and playing.. and playing");
   }
   if (reactionTime==0.666) {

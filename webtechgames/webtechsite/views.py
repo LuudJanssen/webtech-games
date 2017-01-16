@@ -18,12 +18,12 @@ def login_user(request):
             if user.is_active:
                 login(request, user)
                 albums = Album.objects.filter(user=request.user)
-                return render(request, 'music/index.html', {'albums': albums})
+                return render(request, 'webtechsite/login.html', {'albums': albums})
             else:
-                return render(request, 'music/login.html', {'error_message': 'Your account has been disabled'})
+                return render(request, 'webtechsite/login.html', {'error_message': 'Your account has been disabled'})
         else:
-            return render(request, 'music/login.html', {'error_message': 'Invalid login'})
-    return render(request, 'music/login.html')
+            return render(request, 'webtechsite/login.html', {'error_message': 'Invalid login'})
+    return render(request, 'webtechsite/login.html')
 
 
 

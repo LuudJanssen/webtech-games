@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth import logout
 from django.shortcuts import render, redirect
 from django.views import generic
@@ -17,15 +17,12 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                albums = Album.objects.filter(user=request.user)
-                return render(request, 'webtechsite/login.html', {'albums': albums})
+                return render(request, 'webtechsite/index.html')
             else:
                 return render(request, 'webtechsite/login.html', {'error_message': 'Your account has been disabled'})
         else:
             return render(request, 'webtechsite/login.html', {'error_message': 'Invalid login'})
     return render(request, 'webtechsite/login.html')
-
-
 
 
 class UserFormView(View):
@@ -59,13 +56,13 @@ class UserFormView(View):
         return render(request, self.template_name, {'form':form})
 
 
-# def logout_user(request):
-#     logout(request)
-#     form = UserForm(request.POST or None)
-#     context = {
-#         "form": form,
-#     }
-#     return render(request, '/../mockupViews/landing/index.html', context)
+def logout_user(request):
+    logout(request)
+    form = UserForm(request.POST or None)
+    context = {
+        "form": form,
+    }
+    return render(request, 'webtechsite/index.html', context)
 
 # ViewSets define the view behavior.
 class GameViewSet(viewsets.ModelViewSet):

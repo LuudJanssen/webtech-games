@@ -91,7 +91,7 @@
 <div class="popup-container">
     <div class="popup popup-sign-in">
         <h2>Sign in</h2>
-        <form class="login-form" role="form" action="#" method="post" enctype="multipart/form-data">
+        <form class="login-form" role="form" action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <label for="sign_in_email">E-mail</label>
             <input id="sign_in_email" name="password" placeholder="example@example.com">
@@ -114,6 +114,8 @@
         </form>
     </div>
 </div>
+
+<div class="signup"><a href="../logout_user" class="button green">Logout</a>
 
 
 <script>

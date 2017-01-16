@@ -22,6 +22,7 @@ from . import views
 # router.register(r'groups', views.GroupViewSet)
 # #auto-url routing
 #
-urlpatterns = [
-    url(r'^login_user/$', views.login_user, name='login_user'),
-]
+# urlpatterns = [
+#     url(r'^login_user/$', views.login_user, name='login_user'),
+#     url(r'^register/$', views.UserFormView.as_view(), name='register'),
+# ]

@@ -28,7 +28,7 @@
                 Up</a></div>
         </div>
     </header>
-    <main>
+    <main ng-app="games" ng-controller="gamesController">
         <div class="banner-container" id="banner_container">
             <div class="banner" id="banner" style="background-image: url('../img/landing-background.jpg');"></div>
             <div class="banner-content">
@@ -46,25 +46,20 @@
             <div class="sorting">
                 <select class="cs-select cs-skin-elastic">
                     <option value="" disabled selected>Sort Games By</option>
-                    <option value="popularity">Popularity</option>
-                    <option value="date">Date</option>
+                    <option value="-timesPlayed">Popularity</option>
+                    <option value="-dateAdded">Date</option>
+                    <option value="-highscore">Highscore</option>
                 </select>
             </div>
         </div>
 
         <div class="games">
-            <div class="game">
-                <img class="cover-photo">
+            <div class="game" ng-repeat="game in games | orderBy: gameSorting">
+                <img class="cover-photo" ng-style="{'background-image': 'url(\'../img/snake.png\')'}">
                 <div class="info">
-                    <h2>Snake Game</h2>
-                    <p class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                        Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
-                        arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
-                        pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean
-                        vulputate eleifend tellus.</p>
-                    <div class="highscore"><span>Highscore:</span>589</div>
+                    <h2>{{ game.name }}</h2>
+                    <p class="description">{{ game.description }}</p>
+                    <div class="highscore"><span>Highscore:</span>{{ game.highscore }}</div>
                 </div>
                 <div class="play">
                     <img class="photo" src="../img/snake.png">
@@ -100,13 +95,15 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
 <script src="../js/vendor/color-thief.js"></script>
 <script src="../js/vendor/classie.js"></script>
 <script src="../js/vendor/selectFx.js"></script>
 <script src="../js/general-functions.js"></script>
 <script src="../js/popups.js"></script>
 <script src="../js/api.js"></script>
+<script src="app.js"></script>
 <script>
     $(document).ready(function () {
         // Get banner element and background-url and correct background blur
@@ -114,26 +111,7 @@
         var $bannerContainer = $('#banner_container');
         correctBackgroundBlur($banner, $bannerContainer);
 
-        var i;
-        $('.game').each(function (i, gameElement) {
-            correctBackgroundBlur($(gameElement).find('.cover-photo'), $(gameElement));
-        });
-
-        // Apply selectFX on all select elements with classes cs-select
-        (function () {
-            [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
-                new SelectFx(el);
-            });
-        })();
-
-        /* API examples
-        var api = new Api('http://localhost');
-
-        api.getGames();
-        api.getGame('snakegame');
-        api.getHighscore('snakegame');
-        api.getHighscore('snakegame', 'luudjanssen');
-        api.setHighscore('snakegame', 'luudjanssen', 538);*/
+        var api = new Api('http://localhost', true);
     });
 </script>
 </body>

@@ -5,13 +5,7 @@ body {
   background-color: lightblue;
 }
 
-h1 {
-  font-size: 2em;
-  font-family: 'Helvetica', 'Arial', 'Sans-serif';
-  color: #0086b3;
-}
-
-p, button, input {
+button, input {
   font-size: 1em;
   line-height: 0.5em;
   color: #333;
@@ -23,6 +17,7 @@ p2 {
     line-height: 0.5em;
     color: #0500ff;
     margin-bottom: 0.5em;
+    background-color: lightblue;
 }
 
 scoreBoard {
@@ -30,6 +25,7 @@ scoreBoard {
     line-height: 0.5em;
     color: #FFF;
     margin-bottom: 0.5em;
+    background-color: lightblue;
 }
 
 #gameboard {
@@ -55,9 +51,9 @@ scoreBoard {
 	width: 15%;
 	padding: 2px 0;
 	margin-left: 10%;
-	background-color: #fffbfc;
 	color: white;
 	position: relative;
 	float: right;
+    background-color:  lightblue;
 }
 

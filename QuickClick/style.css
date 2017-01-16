@@ -17,17 +17,11 @@ p {
 	text-align: center;
 }
 
+p2 {
+	text-align: right;
+}
 p span {
 	font-family: "Courier New",monospace;
-}
-
-#rectangle{
-    min-width= 100%;
-    min-height= 100%;
-		width: auto;
-		height: auto;
-    background:blue;
-		position:absolute;
 }
 
 #instructions {
@@ -39,6 +33,7 @@ p span {
 #instructions p {
 	text-align: left;
 }
+
 
 #scoreBoard {
 	width: 40%;
@@ -96,9 +91,4 @@ p span {
 	position:relative;
 	float:right;
 	background-color:green;
-}
-
-#start {
-	position:relative;
-	float: right;
 }

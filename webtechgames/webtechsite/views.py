@@ -83,3 +83,9 @@ def game_list(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+def index(request):
+    if not request.user.is_authenticated():
+        return render(request, 'webtechsite/index.html')
+    else:
+        return render(request, 'webtechsite/index.html')

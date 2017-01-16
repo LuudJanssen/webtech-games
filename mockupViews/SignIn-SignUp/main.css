@@ -1,0 +1,21 @@
+body {
+    background: orange;
+}
+
+.login{
+    background: grey;
+    width: 40%;
+    height: 300px;
+    float: left;
+    margin-top: 150px;
+    margin-left: 50px;
+}
+
+.createaccount{
+    background: white;
+    width: 40%;
+    height: 300px;
+    float: right;
+    margin-top: 150px;
+    margin-right: 50px;
+}

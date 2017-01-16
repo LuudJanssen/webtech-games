@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 15 jan 2017 om 14:15
+-- Gegenereerd op: 15 jan 2017 om 15:25
 -- Serverversie: 5.7.14
 -- PHP-versie: 5.6.25
 
@@ -59,6 +59,29 @@ CREATE TABLE `highscore` (
   `date` timestamp NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `webtech.webtechsite_game`
+--
+
+CREATE TABLE `webtech.webtechsite_game` (
+  `gameId` varchar(24) NOT NULL,
+  `name` text NOT NULL,
+  `description` text NOT NULL,
+  `location` text NOT NULL,
+  `genre` text NOT NULL,
+  `dateAdded` timestamp NOT NULL,
+  `timesPlayed` int(24) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `webtech.webtechsite_game`
+--
+
+INSERT INTO `webtech.webtechsite_game` (`gameId`, `name`, `description`, `location`, `genre`, `dateAdded`, `timesPlayed`) VALUES
+('', 'Snake Game', 'A snake needs food', 'snakegame', 'highscore', '2017-01-15 15:22:35', 5);
+
 --
 -- Indexen voor geëxporteerde tabellen
 --
@@ -74,6 +97,12 @@ ALTER TABLE `games`
 --
 ALTER TABLE `highscore`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `webtech.webtechsite_game`
+--
+ALTER TABLE `webtech.webtechsite_game`
+  ADD PRIMARY KEY (`gameId`);
 
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen

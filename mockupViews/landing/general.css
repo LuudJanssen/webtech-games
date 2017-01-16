@@ -18,6 +18,10 @@ div {
     border-radius: 2px;
 }
 
+.button:hover {
+    cursor: pointer
+}
+
 .button:active {
     top: 4px;
     border-bottom-width: 0;

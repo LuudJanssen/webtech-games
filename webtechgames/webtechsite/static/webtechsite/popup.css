@@ -1,0 +1,94 @@
+.popup-blur {
+    filter: blur(0px);
+    transition: filter 0.2s;
+}
+
+.popup-blur.popup-active {
+    filter: blur(5px);
+}
+
+.popup-container {
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: visibility 0s 0.2s, background-color 0.2s 0s;
+}
+
+.popup-container.popup-show {
+    visibility: visible;
+    background-color: rgba(0,0,0,0.5);
+    transition: visibility 0s 0s, background-color 0.2s 0s;
+}
+
+.popup-container .popup {
+    position: absolute;
+    visibility: hidden;
+    padding: 24px 36px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transform: scale(0.8);
+    opacity: 0;
+    transition: opacity 0.2s 0s, transform 0.2s 0s, visibility 0s 0.2s;
+}
+
+.popup-container.popup-show .popup.popup-selected {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.2s 0s, transform 0.2s 0s, visibility 0s 0s;
+}
+
+.popup-container .popup {
+    text-align: center;
+}
+
+.popup-container .popup h2 {
+    font-size: 2.5em;
+    font-weight: 100;
+    color: rgba(0,0,0,0.87);
+    margin-top: 0;
+}
+
+.popup-container .popup .login-form {
+    width: 400px;
+    text-align: left;
+}
+
+.popup-container .popup .login-form label,
+.popup-container .popup .login-form input {
+    display: block;
+}
+
+.popup-container .popup .login-form label {
+    font-size: 0.8em;
+    color: rgba(0,0,0,.54);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.popup-container .popup .login-form input {
+    width: 100%;
+    font-size: 1.2em;
+    border: none;
+    border-bottom: 2px solid rgba(0,0,0,0.12);
+    padding: 4px 0;
+    margin-bottom: 24px;
+}
+
+.popup-container .popup. .login-form a.button:active {
+    margin-top: 32px;
+}
+
+.popup-container .popup .login-form input:active,
+.popup-container .popup .login-form input:focus {
+    outline: none;
+}

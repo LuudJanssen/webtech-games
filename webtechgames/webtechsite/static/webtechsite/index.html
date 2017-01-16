@@ -28,7 +28,7 @@
                 Up</a></div>
         </div>
     </header>
-    <main ng-app="games" ng-controller="gamesController">
+    <main>
         <div class="banner-container" id="banner_container">
             <div class="banner" id="banner" style="background-image: url('../img/landing-background.jpg');"></div>
             <div class="banner-content">
@@ -46,20 +46,25 @@
             <div class="sorting">
                 <select class="cs-select cs-skin-elastic">
                     <option value="" disabled selected>Sort Games By</option>
-                    <option value="-timesPlayed">Popularity</option>
-                    <option value="-dateAdded">Date</option>
-                    <option value="-highscore">Highscore</option>
+                    <option value="popularity">Popularity</option>
+                    <option value="date">Date</option>
                 </select>
             </div>
         </div>
 
         <div class="games">
-            <div class="game" ng-repeat="game in games | orderBy: gameSorting">
-                <img class="cover-photo" ng-style="{'background-image': 'url(\'../img/snake.png\')'}">
+            <div class="game">
+                <img class="cover-photo">
                 <div class="info">
-                    <h2>{{ game.name }}</h2>
-                    <p class="description">{{ game.description }}</p>
-                    <div class="highscore"><span>Highscore:</span>{{ game.highscore }}</div>
+                    <h2>Snake Game</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                        Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+                        arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
+                        pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean
+                        vulputate eleifend tellus.</p>
+                    <div class="highscore"><span>Highscore:</span>589</div>
                 </div>
                 <div class="play">
                     <img class="photo" src="../img/snake.png">
@@ -73,11 +78,11 @@
 <div class="popup-container">
     <div class="popup popup-sign-in">
         <h2>Sign in</h2>
-        <form class="login-form" role="form" action="{% url 'webtechsite:login_user'%}" method="post" enctype="multipart/form-data">
+        <form class="login-form" role="form" action="{% url 'login_user'%}" method="post" enctype="multipart/form-data">
             <label for="sign_in_email">E-mail</label>
-            <input id="sign_in_email" name="username" placeholder="username">
+            <input id="sign_in_email" placeholder="example@example.com">
             <label for="sign_in_password">Password</label>
-            <input id="sign_in_password" name="password" type="password" placeholder="example">
+            <input id="sign_in_password" type="password" placeholder="example">
             <a class="button green full-width">Sign In!</a>
         </form>
     </div>
@@ -95,15 +100,12 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js"></script>
 <script src="../js/vendor/color-thief.js"></script>
 <script src="../js/vendor/classie.js"></script>
 <script src="../js/vendor/selectFx.js"></script>
 <script src="../js/general-functions.js"></script>
 <script src="../js/popups.js"></script>
-<script src="../js/api.js"></script>
-<script src="app.js"></script>
 <script>
     $(document).ready(function () {
         // Get banner element and background-url and correct background blur
@@ -111,7 +113,17 @@
         var $bannerContainer = $('#banner_container');
         correctBackgroundBlur($banner, $bannerContainer);
 
-        var api = new Api('http://localhost', true);
+        var i;
+        $('.game').each(function (i, gameElement) {
+            correctBackgroundBlur($(gameElement).find('.cover-photo'), $(gameElement));
+        });
+
+        // Apply selectFX on all select elements with classes cs-select
+        (function () {
+            [].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
+                new SelectFx(el);
+            });
+        })();
     });
 </script>
 </body>

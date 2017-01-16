@@ -3,7 +3,7 @@ from django.contrib.auth import logout
 from django.shortcuts import render
 from .forms import UserForm
 from .models import Game, Highscore
-from rest_framework import viewsets,
+from rest_framework import viewsets
 from .serializers import GameSerializer, HighscoreSerializer
 
 def logout_user(request):

@@ -1,5 +1,10 @@
+var score = [];
+var points = 0;
+var turn = 0;
+
 function toggle(){
   document.getElementById('gameboard').style.display = "block";
+  document.getElementById('scoreBoard').style.display = "block";
 }
 
 window.addEventListener("keydown", function(e) {
@@ -31,13 +36,7 @@ for(i = 0; i < cols; i++){
 }
 
 var hits = 0;
-var scoreCount = 0;
 
-var score = function() {
-  var score_text = "Score: " + scoreCount;
-  ctx.fillStyle = 'black';
-  ctx.fillText(score_text);
-}
 
 var gB1 = [
 				[0,0,0,0,0,0,0,0,0,0],
@@ -100,13 +99,19 @@ function fireMissle(e) {
       if(gameBoard[row][col] == 0) {
         e.target.style.background = 'lightblue';
         gameBoard[row][col] = 3;
-        scoreCount -= 20;
+        points -= 20;
+        score.push(points);
+        document.getElementById("score").innerHTML = score[turn];
+        turn++;
       //if you hit
     } else if(gameBoard[row][col] == 1) {
         e.target.style.background = 'red';
         gameBoard[row][col] = 2;
         hits++;
-        scoreCount += 200
+        points += 200;
+        score.push(points);
+        document.getElementById("score").innerHTML = score[turn];
+        turn++;
         }
         if(hits == 17) {
           alert("All enemy battleships have been defeated! You rock!");
@@ -114,7 +119,6 @@ function fireMissle(e) {
           window.location.reload();
         }
       }
-      score();
   e.stopPropagation();
 }
 

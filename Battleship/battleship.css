@@ -18,6 +18,20 @@ p, button, input {
   margin-bottom: 0.5em;
 }
 
+p2 {
+    font-size: 1em;
+    line-height: 0.5em;
+    color: #0500ff;
+    margin-bottom: 0.5em;
+}
+
+scoreBoard {
+    font-size: 1em;
+    line-height: 0.5em;
+    color: #FFF;
+    margin-bottom: 0.5em;
+}
+
 #gameboard {
   position: relative;
   margin: 0 auto 2em auto;
@@ -36,3 +50,14 @@ p, button, input {
   width: 50px;
   height: 50px;
 }
+
+#scoreBoard {
+	width: 15%;
+	padding: 2px 0;
+	margin-left: 10%;
+	background-color: #fffbfc;
+	color: white;
+	position: relative;
+	float: right;
+}
+

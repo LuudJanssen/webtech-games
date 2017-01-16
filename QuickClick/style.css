@@ -1,0 +1,104 @@
+#myCanvas {
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	margin:0px;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+p {
+	font-size: 18px;
+	font-family: arial, sans-serif;
+	text-align: center;
+}
+
+p span {
+	font-family: "Courier New",monospace;
+}
+
+#rectangle{
+    min-width= 100%;
+    min-height= 100%;
+		width: auto;
+		height: auto;
+    background:blue;
+		position:absolute;
+}
+
+#instructions {
+	width: 50%;
+	position: relative;
+	float: left;
+}
+
+#instructions p {
+	text-align: left;
+}
+
+#scoreBoard {
+	width: 40%;
+	padding: 2px 0;
+	margin-left: 10%;
+	background-color: #222;
+	color: white;
+	position: relative;
+	float: left;
+}
+
+#nameIntro {
+	position: relative;
+	float: right;
+	font-family: "Courier New";
+}
+
+
+
+#boxE {
+	height: 200px;
+	width: 200px;
+	display: none;
+	position: relative;
+}
+
+#boxM {
+	height: 100px;
+	width: 100px;
+	display: none;
+	position: relative;
+}
+
+#boxH {
+	height: 50px;
+	width: 50px;
+	display: none;
+	position: relative;
+}
+
+
+#hard {
+	position:relative;
+	float:right;
+	background-color:red;
+}
+
+#medium {
+	position:relative;
+	float:right;
+	background-color:orange;
+}
+
+#easy {
+	position:relative;
+	float:right;
+	background-color:green;
+}
+
+#start {
+	position:relative;
+	float: right;
+}

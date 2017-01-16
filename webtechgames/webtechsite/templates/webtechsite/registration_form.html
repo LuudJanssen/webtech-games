@@ -5,48 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-<h3>Create a new account</h3>
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-8 col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3>Register for an Account</h3>
-
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
                     <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="csrfmiddlewaretoken"
-                               value="wNPGfRPY2hIxg3pz520oLKyVzArXZ2TCWQ5EsyQMU19p1V8mCt1IeqWJGuhgYKY4">
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <span class="text-danger small"></span>
-                            </div>
-                            <label class="control-label col-sm-2" for="song_title"><label
-                                    for="id_username">Username:</label></label>
-                            <div class="col-sm-10"><input id="id_username" maxlength="150" name="username" type="text"
-                                                          required=""></div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <span class="text-danger small"></span>
-                            </div>
-                            <label class="control-label col-sm-2" for="song_title"><label for="id_email">Email
-                                address:</label></label>
-                            <div class="col-sm-10"><input id="id_email" maxlength="254" name="email" type="email"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <span class="text-danger small"></span>
-                            </div>
-                            <label class="control-label col-sm-2" for="song_title"><label
-                                    for="id_password">Password:</label></label>
-                            <div class="col-sm-10"><input id="id_password" name="password" type="password" required="">
-                            </div>
-                        </div>
-
+                        {% csrf_token %}
+                        {% include 'webtechsite/form_template.html' %}
                         <div class="form-group">
                             <div class="col-sm-offset-5 col-sm-10">
                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -55,7 +25,7 @@
                     </form>
                 </div>
                 <div class="panel-footer">
-                    Already have an account? <a href="/music/login_user/">Click here</a> to log in.
+                    Already have an account? <a href="{% url 'webtechsite:login_user' %}">Click here</a> to log in.
                 </div>
             </div>
         </div>

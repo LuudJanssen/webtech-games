@@ -40,8 +40,6 @@ class UserFormView(View):
         return render(request, self.template_name, {'form':form})
 
 
-
-
 def logout_user(request):
     logout(request)
     form = UserForm(request.POST or None)

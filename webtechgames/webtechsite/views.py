@@ -5,7 +5,7 @@ from django.views import generic
 from django.views.generic import View
 from .forms import UserForm
 from .models import Game, Highscore
-from rest_framework import viewsets,
+from rest_framework import viewsets
 from .serializers import GameSerializer, HighscoreSerializer
 
 

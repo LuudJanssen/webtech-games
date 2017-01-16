@@ -1,0 +1,29 @@
+header {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 36px 48px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+header .left-container {
+    text-align: left;
+}
+
+header .left-container .logo {
+    font-family: "Roboto Slab", serif;
+    font-size: 2em;
+    font-weight: 100;
+    color: white;
+}
+
+header .left-container .logo span {
+    font-weight: bold;
+}
+
+header .right-container {
+    text-align: right;
+    align-self: center;
+}

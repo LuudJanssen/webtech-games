@@ -78,11 +78,11 @@
 <div class="popup-container">
     <div class="popup popup-sign-in">
         <h2>Sign in</h2>
-        <form class="login-form" role="form" action="{% url 'webtechsite:login_user'%}" method="post" enctype="multipart/form-data">
+        <form class="login-form" role="form" action="{% url 'login_user'%}" method="post" enctype="multipart/form-data">
             <label for="sign_in_email">E-mail</label>
-            <input id="sign_in_email" name="username" placeholder="username">
+            <input id="sign_in_email" placeholder="example@example.com">
             <label for="sign_in_password">Password</label>
-            <input id="sign_in_password" name="password" type="password" placeholder="example">
+            <input id="sign_in_password" type="password" placeholder="example">
             <a class="button green full-width">Sign In!</a>
         </form>
     </div>

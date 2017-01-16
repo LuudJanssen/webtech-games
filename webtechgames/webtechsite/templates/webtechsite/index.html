@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
+
+    {% load staticfiles %}
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900"
           rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/vendor/cs-select.css">
-    <link rel="stylesheet" href="../css/vendor/cs-skin-elastic.css">
-    <link rel="stylesheet" href="general.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="popup.css">
+    <!--{% static 'music/style.css' %}-->
+
+    <link rel="stylesheet" href="{% static 'webtechsite/cs-select.css' %}">
+    <link rel="stylesheet" href="{% static 'webtechsite/cs-skin-elastic.css' %}">
+    <link rel="stylesheet" href="{% static 'webtechsite/general.css' %}">
+    <link rel="stylesheet" href="{% static 'webtechsite/header.css' %}">
+    <link rel="stylesheet" href="{% static 'webtechsite/main.css' %}">
+    <!--<link rel="stylesheet" href="popup.css">-->
+    <link rel="stylesheet" href="{% static 'webtechsite/popup.css' %}">
     <link rel="stylesheet" href="https://i.icomoon.io/public/temp/6b6caf7f8e/webtech-games/style.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js"></script>
+    <script src="{% static 'webtechsite/js/color-thief.js' %}"></script>
+    <script src="{% static 'webtechsite/js/classie.js' %}"></script>
+    <script src="{% static 'webtechsite/js/selectFX.js' %}"></script>
+    <script src="{% static 'webtechsite/js/general-functions.js' %}../js/general-functions.js"></script>
+    <script src="{% static 'webtechsite/js/popups.js' %}"></script>
 </head>
 <body>
 <div class="popup-blur">
@@ -33,7 +46,7 @@
             <div class="banner" id="banner" style="background-image: url('../img/landing-background.jpg');"></div>
             <div class="banner-content">
                 <div class="splash">
-                    <h1>Want To Track Your Gaming Skills?</h1>
+                    <h1>{{ user.username }}, Want To Track Your Gaming Skills?</h1>
                     <p>Signing up allows you to record your game activity and highscores. Save your highscores and
                         compete with others!</p>
                     <a class="button blue" onclick="showPopup('sign-up')">Sign Up Now</a>
@@ -67,8 +80,8 @@
                     <div class="highscore"><span>Highscore:</span>589</div>
                 </div>
                 <div class="play">
-                    <img class="photo" src="../img/snake.png">
-                    <a href="../gamepage/gamePage.html" class="button full-width green">Play Game</a>
+                    <img class="photo" src="{% static 'webtechsite/images/snake.png' %}">
+                    <a href="gamePage.html" class="button full-width green">Play Game</a>
                 </div>
             </div>
         </div>
@@ -80,10 +93,10 @@
         <h2>Sign in</h2>
         <form class="login-form" role="form" action="{% url 'webtechsite:login_user'%}" method="post" enctype="multipart/form-data">
             <label for="sign_in_email">E-mail</label>
-            <input id="sign_in_email" name="username" placeholder="username">
+            <input id="sign_in_email" placeholder="example@example.com">
             <label for="sign_in_password">Password</label>
-            <input id="sign_in_password" name="password" type="password" placeholder="example">
-            <a class="button green full-width">Sign In!</a>
+            <input id="sign_in_password" type="password" placeholder="example">
+            <buton type="submit" class="button green full-width">Sign In!</buton>
         </form>
     </div>
     <div class="popup popup-sign-up">
@@ -100,12 +113,7 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js"></script>
-<script src="../js/vendor/color-thief.js"></script>
-<script src="../js/vendor/classie.js"></script>
-<script src="../js/vendor/selectFx.js"></script>
-<script src="../js/general-functions.js"></script>
-<script src="../js/popups.js"></script>
+
 <script>
     $(document).ready(function () {
         // Get banner element and background-url and correct background blur

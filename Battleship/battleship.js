@@ -114,9 +114,9 @@ function fireMissle(e) {
         turn++;
         }
         if(hits == 17) {
-          alert("All enemy battleships have been defeated! You rock!");
-          document.getElementById('gameboard').style.display = "none";
-          window.location.reload();
+           alert("All enemy battleships have been defeated! You rock!");
+          //document.getElementById('gameboard').style.display = "none";
+          //window.location.reload();
         }
       }
   e.stopPropagation();
